@@ -10,17 +10,31 @@
 <body>
     <!-- Header -->
     <header>
-        <img src="https://e7.pngegg.com/pngimages/756/398/png-clipart-rowlet-pokemon-pokemon-comics-photography-thumbnail.png"
+        <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/722.png"
             alt="picture of Rowlet">
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="form-control me-2" type="search" placeholder="Zadejte název karty"
+                        aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Vyhledat</button>
                 </form>
             </div>
         </nav>
     </header>
+
+    <!-- Container pro zobrazení karet -->
+    <div class="container">
+        <div class="row row-cols-6">
+            <!-- Obrázky karet se dynamicky budou přidávat zde -->
+        </div>
+    </div>
+
+    <footer>
+        <p>Data získána z <a href="https://pokemontcg.io/" target="_blank">Pokémon TCG API</a>.</p>
+        <p>Zdrojový kód na <a href="https://github.com/MartinLe01" target="_blank">GitHubu</a></p>
+        <p>Tato aplikace není oficiálně spojena s The Pokémon Company.</p>
+    </footer>
 </body>
 
 </html>
