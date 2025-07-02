@@ -7,7 +7,7 @@ searchButton.addEventListener('click', async (e) => {
     e.preventDefault();
     let query = searchInput.value;
     const cardsData = await fetchCardsByName(query);
-    console.log(cardsData.data);
+    renderCards(cardsData);
 });
 
 const fetchCardsByName = async (name) => {
@@ -24,5 +24,13 @@ const fetchCardsByName = async (name) => {
 };
 
 const renderCards = (responseData) => {
-    // TODO
+    const cards = responseData.data;
+    cards.forEach(cardObject => {
+        const cardImage = cardObject.images.small;
+        // TODO: upravit card, aby to byl klikatelný odkaz
+        const card = `
+            <img src="${cardImage}"> 
+        `;
+        cardsContainer.insertAdjacentHTML('beforeend', card);
+    });
 };
