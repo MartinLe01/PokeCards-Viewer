@@ -22,14 +22,16 @@
         </nav>
     </header>
 
-    <main class="flex-fill">
+    <main class="flex-fill text-center">
+        <h1>PokeCard Viewer</h1>
+        <p>Databáze Pokémon karet</p>
+
+        <form class="d-flex mx-auto search" role="search">
+            <input class="form-control me-2" type="search" placeholder="Zadejte název karty" aria-label="Search" />
+            <button class="btn btn-outline-primary" type="submit">Vyhledat</button>
+        </form>
         <!-- Container pro zobrazení karet -->
         <div class="container">
-            <form class="d-flex mt-5 " role="search">
-                <input class="form-control me-2" type="search" placeholder="Zadejte název karty" aria-label="Search" />
-                <button class="btn btn-outline-primary" type="submit">Vyhledat</button>
-            </form>
-
             <div class="row row-cols-6">
                 <!-- Obrázky karet se dynamicky budou přidávat zde -->
             </div>
