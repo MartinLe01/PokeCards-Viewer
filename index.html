@@ -10,7 +10,7 @@
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <!-- Header -->
     <header>
         <nav class="navbar bg-body-tertiary">
@@ -22,19 +22,21 @@
         </nav>
     </header>
 
-    <!-- Container pro zobrazení karet -->
-    <div class="container">
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Zadejte název karty" aria-label="Search" />
-            <button class="btn btn-outline-success" type="submit">Vyhledat</button>
-        </form>
+    <main class="flex-fill">
+        <!-- Container pro zobrazení karet -->
+        <div class="container">
+            <form class="d-flex mt-5" role="search">
+                <input class="form-control me-2" type="search" placeholder="Zadejte název karty" aria-label="Search" />
+                <button class="btn btn-outline-success" type="submit">Vyhledat</button>
+            </form>
 
-        <div class="row row-cols-6">
-            <!-- Obrázky karet se dynamicky budou přidávat zde -->
+            <div class="row row-cols-6">
+                <!-- Obrázky karet se dynamicky budou přidávat zde -->
+            </div>
         </div>
-    </div>
+    </main>
 
-    <footer>
+    <footer class="bg-dark text-white text-center py-3">
         <p>Data získána z <a href="https://pokemontcg.io/" target="_blank">Pokémon TCG API</a>.</p>
         <p>Zdrojový kód na <a href="https://github.com/MartinLe01" target="_blank">GitHubu</a></p>
         <p>Tato aplikace není oficiálně spojena s The Pokémon Company.</p>
