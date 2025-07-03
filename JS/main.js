@@ -40,6 +40,7 @@ const renderCards = (cards) => {
         const image = document.createElement('img');
         image.src = card.images.small;
         image.alt = card.name;
+        image.classList.add('cardImage');
 
         link.appendChild(image);
         cardsContainer.appendChild(link);
