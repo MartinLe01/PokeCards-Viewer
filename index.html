@@ -27,12 +27,12 @@
         <p>Databáze Pokémon karet</p>
 
         <form class="d-flex mx-auto search" role="search">
-            <input class="form-control me-2" type="search" placeholder="Zadejte název karty" aria-label="Search" />
-            <button class="btn btn-outline-primary" type="submit">Vyhledat</button>
+            <input class="form-control me-2" id="searchInput" type="search" placeholder="Zadejte název karty" aria-label="Search" />
+            <button class="btn btn-outline-primary" id="searchButton" type="submit">Vyhledat</button>
         </form>
         <!-- Container pro zobrazení karet -->
-        <div class="container">
-            <div class="row row-cols-6">
+        <div class="container my-5">
+            <div class="row row-cols-6 row-gap-4" id="cardsContainer">
                 <!-- Obrázky karet se dynamicky budou přidávat zde -->
             </div>
         </div>
@@ -46,7 +46,7 @@
 
 
 
-
+    <script src="./JS/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>

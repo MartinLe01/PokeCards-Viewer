@@ -2,7 +2,6 @@
     width: 50px;
 }
 
-
 main {
     padding-top: 96px;
 }
@@ -10,4 +9,8 @@ main {
 .search {
     max-width: 800px;
     margin-top: 32px;
+}
+
+.cardImage {
+    width: 100%;
 }
