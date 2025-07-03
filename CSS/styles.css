@@ -10,3 +10,7 @@ main {
     max-width: 800px;
     margin-top: 32px;
 }
+
+.cardImage {
+    width: 100%;
+}

@@ -5,32 +5,43 @@ const cardsContainer = document.querySelector('#cardsContainer');
 
 searchButton.addEventListener('click', async (e) => {
     e.preventDefault();
-    let query = searchInput.value;
-    const cardsData = await fetchCardsByName(query);
+    let query = searchInput.value.trim();
+    if(!query) return;
+
+    const q = encodeURIComponent(`name:${query}`);
+    const url = `${API_BASE_URL}?q=${q}`;
+
+    const cardsData = await fetchCardsByName(url);
     renderCards(cardsData);
 });
 
-const fetchCardsByName = async (name) => {
+const fetchCardsByName = async (url) => {
     try {
-        const response = await fetch(
-            `${API_BASE_URL}?q=name:${name}`
-        );
-        const searchData = await response.json();
+        const res = await fetch(url);
+        if(!res.ok) throw new Error(`HTTP ${res.status}`);
+        const json = await res.json();
+        const cards = json.data;
         
-        return searchData;
+        return cards;
     } catch (error) {
-        console.log('error');
+        console.error('Search failed', error);
+        alert('Could not fetch cards. Try again later.');
     }
 };
 
-const renderCards = (responseData) => {
-    const cards = responseData.data;
-    cards.forEach(cardObject => {
-        const cardImage = cardObject.images.small;
-        // TODO: upravit card, aby to byl klikatelný odkaz
-        const card = `
-            <img src="${cardImage}"> 
-        `;
-        cardsContainer.insertAdjacentHTML('beforeend', card);
+const renderCards = (cards) => {
+    cardsContainer.innerHTML = '';
+    cards.forEach(card => {
+        if (!card.images || !card.images.small) return;
+        
+        const link = document.createElement('a');
+        link.href = `card.html?id=${encodeURIComponent(card.id)}`;
+
+        const image = document.createElement('img');
+        image.src = card.images.small;
+        image.alt = card.name;
+
+        link.appendChild(image);
+        cardsContainer.appendChild(link);
     });
 };
