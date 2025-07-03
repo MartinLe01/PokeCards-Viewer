@@ -14,3 +14,7 @@ main {
 .cardImage {
     width: 100%;
 }
+
+#pageImage {
+    width: 80%;
+}
