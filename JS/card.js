@@ -37,7 +37,7 @@ fetch(`https://api.pokemontcg.io/v2/cards/${cardId}`)
         priceLowTCGP.textContent = `$${cardData.tcgplayer.prices.holofoil.low}`;
         priceHighTCGP.textContent = `$${cardData.tcgplayer.prices.holofoil.high}`;
 
-        priceAvgCM.textContent = `${cardData.tcgplayer.prices.holofoil.averageSellPrice} €`;
-        priceLowCM.textContent = `${cardData.tcgplayer.prices.holofoil.lowPrice} €`;
-        priceTrendCM.textContent = `${cardData.tcgplayer.prices.holofoil.trendPrice} €`;
+        priceAvgCM.textContent = `${cardData.cardmarket.prices.averageSellPrice} €`;
+        priceLowCM.textContent = `${cardData.cardmarket.prices.lowPrice} €`;
+        priceTrendCM.textContent = `${cardData.cardmarket.prices.trendPrice} €`;
     });
