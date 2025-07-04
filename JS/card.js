@@ -8,6 +8,13 @@ const setImage = document.querySelector('#setImage');
 const typesElement = document.querySelector('#types');
 const cardLinkTCGP = document.querySelector('#cardLinkTCGP');
 const cardLinkCM = document.querySelector('#cardLinkCM');
+const priceMarketTCGP = document.querySelector('#priceMarketTCGP');
+const priceLowTCGP = document.querySelector('#priceLowTCGP');
+const priceHighTCGP = document.querySelector('#priceHighTCGP');
+const priceAvgCM = document.querySelector('#priceAvgCM');
+const priceLowCM = document.querySelector('#priceLowCM');
+const priceTrendCM = document.querySelector('#priceTrendCM');
+
 
 fetch(`https://api.pokemontcg.io/v2/cards/${cardId}`)
     .then(res => res.json())
@@ -25,4 +32,12 @@ fetch(`https://api.pokemontcg.io/v2/cards/${cardId}`)
 
         cardLinkTCGP.href = cardData.tcgplayer.url;
         cardLinkCM.href = cardData.cardmarket.url;
+
+        priceMarketTCGP.textContent = `$${cardData.tcgplayer.prices.holofoil.market}`;
+        priceLowTCGP.textContent = `$${cardData.tcgplayer.prices.holofoil.low}`;
+        priceHighTCGP.textContent = `$${cardData.tcgplayer.prices.holofoil.high}`;
+
+        priceAvgCM.textContent = `${cardData.tcgplayer.prices.holofoil.averageSellPrice} €`;
+        priceLowCM.textContent = `${cardData.tcgplayer.prices.holofoil.lowPrice} €`;
+        priceTrendCM.textContent = `${cardData.tcgplayer.prices.holofoil.trendPrice} €`;
     });
