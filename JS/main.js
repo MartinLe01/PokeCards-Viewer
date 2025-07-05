@@ -2,11 +2,16 @@ const API_BASE_URL = "https://api.pokemontcg.io/v2/cards";
 const searchInput = document.querySelector('#searchInput');
 const searchButton = document.querySelector('#searchButton');
 const cardsContainer = document.querySelector('#cardsContainer');
+const warningElement = document.querySelector('#text-warning');
 
 searchButton.addEventListener('click', async (e) => {
     e.preventDefault();
+    
     let query = searchInput.value.trim();
-    if(!query) return;
+    if(!query) {
+        warningElement.textContent = 'Prosím zadej název pokemon karty.';
+        return;
+    };
 
     const q = encodeURIComponent(`name:${query}`);
     const url = `${API_BASE_URL}?q=${q}`;
@@ -31,6 +36,13 @@ const fetchCardsByName = async (url) => {
 
 const renderCards = (cards) => {
     cardsContainer.innerHTML = '';
+
+    if (!cards || cards.length === 0) {
+        warningElement.textContent = 'Žádné karty nenalezeny. Zkus jiný název karty.';
+        return;
+    }
+
+    warningElement.textContent = '';
     cards.forEach(card => {
         if (!card.images || !card.images.small) return;
         
