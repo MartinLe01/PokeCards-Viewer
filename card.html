@@ -30,29 +30,74 @@
                 </div>
                 <div class="col">
                     <h1 id="cardName"><!-- Název karty --></h1>
-                    <p>Název setu:</p>
-                    <p id="setName"><!-- Název setu --></p>
-                    <img src="" alt="" id="setImage">
-                    <p>Typy:</p>
-                    <p id="types"><!-- Typy elementů --></p>
-                
-                    <hr>
-                    <p>Podívejte se na <a href="" id="cardLinkTCGP">TCGPlayer</a></p>
-                    <h6 class="priceTitle">Tržní cena</h6>
-                    <p id="priceMarketTCGP"></p>
-                    <h6 class="priceTitle">Cena Low</h6>
-                    <p id="priceLowTCGP"></p>
-                    <h6 class="priceTitle">Cena High</h6>
-                    <p id="priceHighTCGP"></p>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6 col-sm-3">
+                                <p>Název setu:</p>
+                            </div>
+                            <!-- <div class="col-4 col-sm-3">
+                                <p id="setName"> // název setu </p>
+                            </div> -->
+                            <div class="col-6 col-sm-2 px-0">
+                                <img src="" alt="" id="setImage" class="setImage">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 col-sm-1">
+                                <p>Typy:</p>
+                            </div>
+                            <div class="col-6 col-sm-1">
+                                <p id="types"><!-- Typy elementů --></p>
+                            </div>
+                        </div>
+                    </div>
 
                     <hr>
-                    <p>Podívejte se na <a href="" id="cardLinkCM">CardMarket</a></p>
-                    <h6 class="priceTitle">Průměrná cena</h6>
-                    <p id="priceAvgCM"></p>
-                    <h6 class="priceTitle">Cena Low</h6>
-                    <p id="priceLowCM"></p>
-                    <h6 class="priceTitle">Trendová cena</h6>
-                    <p id="priceTrendCM"></p>
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col">
+                                <p>Podívejte se na <a href="" id="cardLinkTCGP">TCGPlayer</a></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h6 class="priceTitleAvg">Tržní cena</h6>
+                                <p id="priceMarketTCGP"></p>
+                            </div>
+                            <div class="col">
+                                <h6 class="priceTitleLow">Cena Low</h6>
+                                <p id="priceLowTCGP"></p>
+                            </div>
+                            <div class="col">
+                                <h6 class="priceTitleHigh">Cena High</h6>
+                                <p id="priceHighTCGP"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col">
+                                <p>Podívejte se na <a href="" id="cardLinkCM">CardMarket</a></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h6 class="priceTitleAvg">Průměrná cena</h6>
+                                <p id="priceAvgCM"></p>
+                            </div>
+                            <div class="col">
+                                <h6 class="priceTitleLow">Cena Low</h6>
+                                <p id="priceLowCM"></p>
+                            </div>
+                            <div class="col">
+                                <h6 class="priceTitleHigh">Trendová cena</h6>
+                                <p id="priceTrendCM"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,7 +105,7 @@
 
     <footer class="bg-dark text-white text-center py-3">
         <p>Data získána z <a href="https://pokemontcg.io/" target="_blank">Pokémon TCG API</a>.</p>
-        <p>Odkaz na můj <a href="https://github.com/MartinLe01" target="_blank">GitHub</a></p>
+        <p>Odkaz na můj <a href="https://github.com/MartinLe01" target="_blank">GitHub</a>.</p>
         <p>Tato aplikace není oficiálně spojena s The Pokémon Company.</p>
     </footer>
 

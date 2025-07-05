@@ -18,3 +18,22 @@ main {
 #pageImage {
     width: 80%;
 }
+
+.setImage {
+    width: 80%;
+}
+
+.priceTitleAvg {
+    color: blueviolet;
+    font-weight: bold;
+}
+
+.priceTitleLow {
+    color: green;
+    font-weight: bold;
+}
+
+.priceTitleHigh {
+    color: red;
+    font-weight: bold;
+}

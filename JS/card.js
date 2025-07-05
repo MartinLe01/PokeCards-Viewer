@@ -3,7 +3,7 @@ const cardId = params.get('id');
 
 const pageImage = document.querySelector('#pageImage');
 const cardName = document.querySelector('#cardName');
-const setName = document.querySelector('#setName');
+// const setName = document.querySelector('#setName');
 const setImage = document.querySelector('#setImage');
 const typesElement = document.querySelector('#types');
 const cardLinkTCGP = document.querySelector('#cardLinkTCGP');
@@ -25,7 +25,7 @@ fetch(`https://api.pokemontcg.io/v2/cards/${cardId}`)
         pageImage.alt = cardData.name;
 
         cardName.textContent = cardData.name;
-        setName.textContent = cardData.set.name;
+        // setName.textContent = cardData.set.name;
         setImage.src = cardData.set.images.logo;
 
         typesElement.textContent = cardData.types;
