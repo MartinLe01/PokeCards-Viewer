@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeCards Viewer</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <!-- Header -->
+    <header>
+        <nav class="navbar-dark bg-dark py-2">
+            <div class="container-fluid">
+                <a href="./index.html" class="navbar-brand fs-4"><img class="logo"
+                        src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/722.png"
+                        alt="picture of Rowlet">PokeCard Viewer</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-fill">
+        <div class="container mb-5">
+            <div class="row">
+                <div class="col">
+                    <img src="" alt="" id="pageImage">
+                </div>
+                <div class="col">
+                    <h1 id="cardName"><!-- Název karty --></h1>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6 col-sm-3">
+                                <p>Název setu:</p>
+                            </div>
+                            <!-- <div class="col-4 col-sm-3">
+                                <p id="setName"> // název setu </p>
+                            </div> -->
+                            <div class="col-6 col-sm-2 px-0">
+                                <img src="" alt="" id="setImage" class="setImage">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 col-sm-1">
+                                <p>Typy:</p>
+                            </div>
+                            <div class="col-6 col-sm-1">
+                                <p id="types"><!-- Typy elementů --></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col">
+                                <p>Podívejte se na <a href="" id="cardLinkTCGP">TCGPlayer</a></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h6 class="priceTitleAvg">Tržní cena</h6>
+                                <p id="priceMarketTCGP"></p>
+                            </div>
+                            <div class="col">
+                                <h6 class="priceTitleLow">Cena Low</h6>
+                                <p id="priceLowTCGP"></p>
+                            </div>
+                            <div class="col">
+                                <h6 class="priceTitleHigh">Cena High</h6>
+                                <p id="priceHighTCGP"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col">
+                                <p>Podívejte se na <a href="" id="cardLinkCM">CardMarket</a></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h6 class="priceTitleAvg">Průměrná cena</h6>
+                                <p id="priceAvgCM"></p>
+                            </div>
+                            <div class="col">
+                                <h6 class="priceTitleLow">Cena Low</h6>
+                                <p id="priceLowCM"></p>
+                            </div>
+                            <div class="col">
+                                <h6 class="priceTitleHigh">Trendová cena</h6>
+                                <p id="priceTrendCM"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>Data získána z <a href="https://pokemontcg.io/" target="_blank">Pokémon TCG API</a>.</p>
+        <p>Odkaz na můj <a href="https://github.com/MartinLe01" target="_blank">GitHub</a>.</p>
+        <p>Tato aplikace není oficiálně spojena s The Pokémon Company.</p>
+    </footer>
+
+
+
+    <script src="./JS/card.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
