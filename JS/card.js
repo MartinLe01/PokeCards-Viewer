@@ -30,14 +30,29 @@ fetch(`https://api.pokemontcg.io/v2/cards/${cardId}`)
 
         typesElement.textContent = cardData.types;
 
-        cardLinkTCGP.href = cardData.tcgplayer.url;
-        cardLinkCM.href = cardData.cardmarket.url;
+        if (cardData.tcgplayer?.url) {
+            cardLinkTCGP.href = cardData.tcgplayer.url;
 
-        priceMarketTCGP.textContent = `$${cardData.tcgplayer.prices.holofoil.market}`;
-        priceLowTCGP.textContent = `$${cardData.tcgplayer.prices.holofoil.low}`;
-        priceHighTCGP.textContent = `$${cardData.tcgplayer.prices.holofoil.high}`;
+            const prices = cardData.tcgplayer.prices?.holofoil;
+            if (prices) {
+                priceMarketTCGP.textContent = prices.market ? `$${prices.market}` : 'N/A';
+                priceLowTCGP.textContent = prices.low ? `$${prices.low}` : 'N/A';
+                priceHighTCGP.textContent = prices.high ? `$${prices.high}` : 'N/A';
+            }
+        } else {
+            cardLinkTCGP.textContent = 'Nedostupné';
+        }
 
-        priceAvgCM.textContent = `${cardData.cardmarket.prices.averageSellPrice} €`;
-        priceLowCM.textContent = `${cardData.cardmarket.prices.lowPrice} €`;
-        priceTrendCM.textContent = `${cardData.cardmarket.prices.trendPrice} €`;
+        if (cardData.cardmarket?.url) {
+            cardLinkCM.href = cardData.cardmarket.url;
+
+            const pricesCM = cardData.cardmarket.prices;
+            if (pricesCM) {
+                priceAvgCM.textContent = pricesCM.averageSellPrice ? `${pricesCM.averageSellPrice} €` : 'N/A';
+                priceLowCM.textContent = pricesCM.lowPrice ? `${pricesCM.lowPrice} €` : 'N/A';
+                priceTrendCM.textContent = pricesCM.trendPrice ? `${pricesCM.trendPrice} €` : 'N/A';
+            }
+        } else {
+            cardLinkCM.textContent = 'Nedostupné';
+        }
     });

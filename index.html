@@ -27,9 +27,11 @@
         <p>Databáze Pokémon karet</p>
 
         <form class="d-flex mx-auto search" role="search">
-            <input class="form-control me-2" id="searchInput" type="search" placeholder="Zadejte název karty" aria-label="Search" />
+            <input class="form-control me-2" id="searchInput" type="search" placeholder="Zadejte název pokemon karty" aria-label="Search" />
             <button class="btn btn-outline-primary" id="searchButton" type="submit">Vyhledat</button>
         </form>
+        <p id="text-warning" class="text-warning"></p>
+
         <!-- Container pro zobrazení karet -->
         <div class="container my-5">
             <div class="row row-cols-6 row-gap-4" id="cardsContainer">
